@@ -1,36 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400..700&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+.left,
+.right {
+  flex: 1;
+  display: flex;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html,
+body {
+  margin: 0;
+  background-color: #f0f0f0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-secondary;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.right {
+  justify-content: flex-end;
+}
+
+.arrow {
+  display: inline-block;
+  float: left;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.arrow:before {
+  content: "";
+  height: 1.5px;
+  width: 30px;
+  background-color: #a7727d;
+  display: block;
+  float: left;
+  position: relative;
+  top: 4.5px;
+  transition: 0.3s all;
+}
+
+.arrow:after {
+  content: "";
+  float: left;
+  border-radius: 0.25rem;
+  border-left: 5px solid #a7727d;
+  border-right: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+}
+
+.arrow:hover:before {
+  width: 40px;
+}
+
+h1 {
+  @apply font-Quattrocento text-5xl;
+}
+
+h2 {
+  @apply font-Quattrocento text-[32px];
+}
+
+h3 {
+  @apply font-Quattrocento text-2xl;
+}
+
+h4 {
+  @apply font-Quattrocento text-lg;
+}
+
+p {
+  @apply font-Lora text-base;
 }
