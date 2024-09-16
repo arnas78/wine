@@ -4,6 +4,7 @@ import {
   WineDetailTooltip,
   WineCard,
   FilterCard,
+  WineCarousel,
 } from "@/components";
 import { Image, Tooltip, Button } from "@nextui-org/react";
 import {
@@ -13,29 +14,32 @@ import {
   DropletIcon,
   ArrowRight02Icon,
   TongueIcon,
+  ArrowLeft01Icon,
 } from "hugeicons-react";
+
+import { wineFiltersData, allWines2 } from "@/constants";
 
 export default function Wine() {
   const wineDetails = [
     {
       detailType: "percentage",
       detailInfo: "13%",
-      detailContent: "Alcoholic percentage is 13%",
+      detailContent: "Alcoholic percentage",
     },
     {
       detailType: "origin",
       detailInfo: "lombardy",
-      detailContent: "Origin place is Lombardy, Italy",
+      detailContent: "Origin place",
     },
     {
       detailType: "year",
       detailInfo: "2021",
-      detailContent: "Year of production is 2021",
+      detailContent: "Year of production",
     },
     {
       detailType: "color",
       detailInfo: "red",
-      detailContent: "Color of the wine is Red",
+      detailContent: "Color of the wine",
     },
   ];
 
@@ -106,56 +110,19 @@ export default function Wine() {
             <ArrowRight02Icon className="text-accent font-bold" />
           </div>
         </div>
-        <div>
-          <div className="flex flex-col gap-3 mt-6">
-            <FilterCard
-              filterType="select"
-              filterTitle="Red"
-              filterIcon={<TongueIcon color="#A7727D" size={24} />}
-            />
-            <FilterCard
-              filterType="toggle"
-              filterTitle="French"
-              filterIcon={
-                <Image
-                  width={40}
-                  height={24}
-                  alt="Origin flag"
-                  src="flag-france.png"
-                  radius="none"
-                  className="rounded"
-                />
-              }
-            />
-            <FilterCard
-              filterType="toggle"
-              filterTitle="Italian"
-              filterIcon={
-                <Image
-                  width={40}
-                  height={24}
-                  alt="Origin flag"
-                  src="flag-italy.png"
-                  radius="none"
-                  className="rounded"
-                />
-              }
-            />
-            <FilterCard
-              filterType="toggle"
-              filterTitle="Georgian"
-              filterIcon={
-                <Image
-                  width={40}
-                  height={24}
-                  alt="Origin flag"
-                  src="flag-georgia.png"
-                  radius="none"
-                  className="rounded"
-                />
-              }
-            />
+        <div className="flex gap-5 mt-6">
+          <div className="flex flex-col gap-3">
+            {wineFiltersData.map((filter, i) => (
+              <FilterCard
+                key={i}
+                filterType={filter.filterType}
+                filterTitle={filter.filterTitle}
+                filterIcon={filter.filterIcon}
+                filterOptions={filter.filterOptions ?? undefined}
+              />
+            ))}
           </div>
+          <WineCarousel items={allWines2} itemsPerPage={4} />
         </div>
       </div>
     </div>
