@@ -14,14 +14,14 @@ interface CardProps {
 
 const WineCard = ({ wine }: CardProps) => {
   return (
-    <div className="rounded-md-lg bg-white px-3 py-4 w-full relative shadow">
+    <div className="rounded-lg bg-white px-3 py-4 w-[248px] flex-shrink-0 relative shadow z-50">
       <div className="flex justify-center ">
         <Image
           src={wine.flag}
           alt="hero"
           height={24}
           width={32}
-          className="object-contain rounded-md absolute left-3 top-4"
+          className="object-contain rounded absolute left-3 top-4"
         />
         <div className="h-[240px] w-[60px] relative mt-2">
           <Image src={wine.image} alt="hero" fill className="object-contain" />

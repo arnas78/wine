@@ -37,7 +37,12 @@ const WineDetailTooltip = ({
   return (
     <Tooltip
       content={
-        <div className="px-1 py-2 text-xs text-grey-700">{detailContent}</div>
+        <div className="px-1 py-2 flex items-center justify-center gap-1">
+          <p className="text-sm text-grey-500">{detailContent} is</p>
+          <span className="text-grey-700 font-bold capitalize">
+            {detailInfo}
+          </span>
+        </div>
       }
       placement="right"
       radius="sm"

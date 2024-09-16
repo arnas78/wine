@@ -5,6 +5,7 @@ import WineDetails from "./WineDetails";
 import WineDetailTooltip from "./WineDetailTooltip";
 import QuantitySelector from "./QuantitySelector";
 import FilterCard from "./FilterCard";
+import { WineCarousel } from "./WineCarousel";
 
 export {
   Navbar,
@@ -14,4 +15,5 @@ export {
   WineDetailTooltip,
   QuantitySelector,
   FilterCard,
+  WineCarousel,
 };

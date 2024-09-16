@@ -2,49 +2,24 @@
 import { Button, Select, SelectItem } from "@nextui-org/react";
 import React, { useState } from "react";
 import { Selection } from "@react-types/shared";
-
-interface FilterCardProps {
-  filterIcon: React.ReactNode;
-  filterTitle: string;
-  filterType: string;
-  filterDropdown?: string[];
-  filterActive?: false;
-}
+import { FilterCardProps } from "@/types";
 
 const FilterCard = ({
   filterType,
-  filterDropdown,
   filterIcon,
   filterTitle,
+  filterOptions,
 }: FilterCardProps) => {
   let [isActive, setIsActive] = useState(false);
 
-  const [selected, setSelected] = React.useState<Selection>(new Set(["dry"]));
-
-  interface Animal {
-    key: string; // The unique identifier for each animal
-    label: string; // The display name or label for each animal
-  }
-
-  const taste: Animal[] = [
-    { key: "bone_dry", label: "Bone Dry" },
-    { key: "semi_dry", label: "Semi Dry" },
-    { key: "dry", label: "Dry" },
-    { key: "semi_sweet", label: "Semi Sweet" },
-    { key: "sweet", label: "Sweet" },
-  ];
+  const [selected, setSelected] = React.useState<Selection>(new Set([]));
 
   const itemClasses = {
-    trigger:
-      "py-0 px-4 transition-all flex items-center w-[190px] h-[50px] bg-grey-100 border-[1px] border-grey-900 text-grey-900",
+    trigger: `shadow py-0 px-4 transition-all flex items-center w-[220px] h-[50px] bg-white border-[1px] ${(selected instanceof Set ? selected.size : 0) > 0 ? "border-grey-700 data-[hover=true]:border-grey-700" : "data-[focus=true]:border-grey-300 border-grey-300 "}`,
     selectorIcon: "text-grey-500 w-6 h-6`}",
     value: "text-grey-900 font-Quattrocento text-2xl",
-    innerWrapper: "flex justify-start items-center gap-4",
+    innerWrapper: "flex justify-start items-center gap-4 transition-all",
   };
-
-  function isSelectedEmpty(selected: Set<Selection>): boolean {
-    return selected.size === 0;
-  }
 
   return (
     <div>
@@ -57,7 +32,7 @@ const FilterCard = ({
               {filterIcon}
             </div>
           }
-          className={`transition-all px-4 flex items-center justify-start gap-4 w-[190px] h-[50px] ${isActive ? "bg-grey-100 border-grey-900" : "bg-white border-grey-300"} border-[1px] mr-auto`}
+          className={`shadow transition-all px-4 flex items-center justify-start gap-4 w-[220px] h-[50px] ${isActive ? "bg-grey-100 border-grey-700" : "bg-white border-grey-300"} border-[1px] mr-auto`}
           onPress={(e) => {
             setIsActive(!isActive);
           }}
@@ -66,9 +41,9 @@ const FilterCard = ({
         </Button>
       ) : (
         <Select
-          placeholder="Taste"
+          placeholder={filterTitle}
           selectionMode="multiple"
-          disallowEmptySelection
+          disallowEmptySelection={false}
           variant="bordered"
           startContent={
             <div className="w-[70px] flex justify-center items-center">
@@ -76,15 +51,27 @@ const FilterCard = ({
             </div>
           }
           renderValue={() => {
-            return <h3>Taste</h3>;
+            return (
+              <div className="flex items-center gap-4 transition-all">
+                <h3>{filterTitle}</h3>
+                <div className="bg-grey-100 rounded-full p-2 mr-auto w-[30px] h-[30px] flex justify-center items-center">
+                  <p>{selected instanceof Set ? selected.size : 0}</p>
+                </div>
+              </div>
+            );
           }}
           classNames={itemClasses}
           className="flex items-center justify-start"
           selectedKeys={selected}
           onSelectionChange={setSelected}
         >
-          {taste.map((level) => (
-            <SelectItem key={level.key}>{level.label}</SelectItem>
+          {(filterOptions ?? []).map((level, i) => (
+            <SelectItem
+              className=" data-[hover=true]:bg-grey-100 data-[selectable=true]:focus:bg-grey-100"
+              key={level.key}
+            >
+              {level.label}
+            </SelectItem>
           ))}
         </Select>
       )}
