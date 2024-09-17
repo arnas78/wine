@@ -44,7 +44,7 @@ export default function Wine() {
   ];
 
   return (
-    <div className="max-w-[1280px] mx-auto mt-16">
+    <div className="max-w-[1280px] mx-auto h-[100vh] mt-32">
       <div className="gap-8 flex relative ">
         <div className="flex-1 flex justify-center w-full">
           <div className="flex flex-col gap-8 absolute left-0 top-0">

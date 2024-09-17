@@ -26,7 +26,11 @@ export default function Checkout() {
         <h1 className="font-normal text-grey-900">Checkout</h1>
         <h3 className="text-grey-500 mt-2">Shipping information</h3>
 
-        <RadioGroup orientation="horizontal" classNames={styles}>
+        <RadioGroup
+          orientation="horizontal"
+          classNames={styles}
+          defaultValue="delivery"
+        >
           <CustomRadio value="delivery">
             <ContainerTruck01Icon />
             Delivery
