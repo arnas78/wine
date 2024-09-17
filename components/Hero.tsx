@@ -11,7 +11,7 @@ import { allWines } from "@/constants";
 const Hero = () => {
   return (
     <div className="flex flex-col gap-[72px] pb-20 bg-background">
-      <div className="max-w-[1280px] mx-auto flex justify-center mt-16 gap-8">
+      <div className="max-w-[1280px] mx-auto flex justify-center mt-24 gap-8">
         <div className="flex-1 flex flex-col">
           <h1 className="font-Quattrocento text-5xl">
             Discover the bestsellers

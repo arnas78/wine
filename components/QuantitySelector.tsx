@@ -7,7 +7,11 @@ import {
   DeletePutBackIcon,
 } from "hugeicons-react";
 
-const QuantitySelector = () => {
+interface QuantitySelectorProps {
+  resetButton?: boolean;
+}
+
+const QuantitySelector = ({ resetButton }: QuantitySelectorProps) => {
   let [itemCount, setItemCount] = useState(1);
 
   return (
@@ -31,14 +35,16 @@ const QuantitySelector = () => {
           }}
         />
       </div>
-      <DeletePutBackIcon
-        className="text-grey-500 cursor-pointer"
-        width={20}
-        height={20}
-        onClick={() => {
-          setItemCount(1);
-        }}
-      />
+      {resetButton && (
+        <DeletePutBackIcon
+          className="text-grey-500 cursor-pointer"
+          width={20}
+          height={20}
+          onClick={() => {
+            setItemCount(1);
+          }}
+        />
+      )}
     </div>
   );
 };
