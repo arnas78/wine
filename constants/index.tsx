@@ -38,6 +38,31 @@ export const allWines = [
   },
 ];
 
+export const allWines3 = [
+  {
+    flag: "/flag-italy.png",
+    image: "/wine-red.png",
+    percentile: "12",
+    originTown: "lombardy",
+    year: "2021",
+    color: "red",
+    winemaker: "chevalier wines",
+    title: "lorem ipsum",
+    price: 12.99,
+  },
+  {
+    flag: "/flag-france.png",
+    image: "/wine-fancy.png",
+    percentile: "13",
+    originTown: "bordeaux",
+    year: "2015",
+    color: "red",
+    winemaker: "pinot noir",
+    title: "domaine serene",
+    price: 17.99,
+  },
+];
+
 export const allWines2 = [
   {
     flag: "/flag-italy.png",
