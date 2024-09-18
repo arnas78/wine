@@ -5,7 +5,7 @@
 <stop stop-color="#A7727D"/>
 <stop offset="0.00283585" stop-color="#DDC3BD"/>
 <stop offset="0.0491728" stop-color="#F8ECDD"/>
-<stop offset="0.1" stop-color="#FAF8F5"/>
+<stop offset="0.1" stop-color="#FDFDFC"/>
 </radialGradient>
 </defs>
 </svg>
