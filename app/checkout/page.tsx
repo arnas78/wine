@@ -6,6 +6,7 @@ import {
   Checkbox,
   Divider,
   Image,
+  Link,
   RadioGroup,
 } from "@nextui-org/react";
 import React, { useState } from "react";
@@ -21,7 +22,7 @@ export default function Checkout() {
   };
 
   return (
-    <div className="bg-background max-w-[1280px] h-[100vh] mx-auto mt-32 grid-checkout">
+    <div className="max-w-[1280px] h-[100vh] mx-auto mt-32 grid-checkout">
       <div>
         <h1 className="font-normal text-grey-900">Checkout</h1>
         <h3 className="text-grey-500 mt-2">Shipping information</h3>
@@ -138,12 +139,14 @@ export default function Checkout() {
             </p>
           </div>
         </div>
-        <Button
-          variant="solid"
-          className="w-full bg-accent shadow rounded-md mt-4"
-        >
-          <h4 className="text-white font-bold mt-[2px]">Buy Now</h4>
-        </Button>
+        <Link href="/confirmation">
+          <Button
+            variant="solid"
+            className="w-full bg-accent shadow rounded-md mt-4"
+          >
+            <h4 className="text-white font-bold mt-[2px]">Buy Now</h4>
+          </Button>
+        </Link>
       </div>
     </div>
   );

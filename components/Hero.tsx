@@ -11,8 +11,8 @@ import { allWines } from "@/constants";
 const Hero = () => {
   return (
     <div className="flex flex-col gap-[72px] pb-20 bg-background">
-      <div className="max-w-[1280px] mx-auto flex justify-center mt-24 gap-8">
-        <div className="flex-1 flex flex-col">
+      <div className="max-w-[1280px] mx-auto flex justify-center mt-32 gap-8">
+        <div className="w-1/2 flex flex-col">
           <h1 className="font-Quattrocento text-5xl">
             Discover the bestsellers
           </h1>
@@ -60,19 +60,21 @@ const Hero = () => {
               </button>
             </div>
           </div>
-          <div className="grid grid-cols-3 gap-5 mt-4 pb-4 relative">
+          <div className="mt-4 pb-4 relative rounded-md">
             <img
               src="/section-gradient.svg"
               alt="hero"
-              className="absolute w-[100%] object-cover left-[30px] -bottom-[60px] h-[200px] overflow-visible"
+              className="absolute w-[100%] object-cover left-[40px] -bottom-[60px] h-[200px] overflow-visible"
             />
-            {allWines?.map((wine, index) => (
-              <WineCard wine={wine} key={index} />
-            ))}
+            <div className="flex items-center gap-5 rounded-md py-4 px-8 -m-4 -translate-x-4  overflow-hidden">
+              {allWines?.map((wine, index) => (
+                <WineCard wine={wine} key={index} />
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="bg-primary rounded-md-lg h-[568px] flex-1 p-6 flex flex-col justify-between relative overflow-hidden">
+        <div className="bg-primary rounded-md h-[568px] w-1/2 p-6 flex flex-col justify-between relative overflow-hidden z-50 ">
           <h1 className="text-7xl font-Quattrocento z-20 text-grey-900">
             Our wine has a <br />
             <span className="text-accent">story</span> to tell
@@ -88,7 +90,7 @@ const Hero = () => {
             className="absolute right-[90px] top-[150px] z-10 w-auto h-[228px] object-cover"
           />
 
-          <div className="flex gap-12 bg-background p-4 h-[224px] rounded-md-lg z-20">
+          <div className="flex gap-12 bg-background p-4 h-[224px] rounded-md z-20">
             <div className="flex-1 flex flex-col justify-between">
               <div>
                 <h4 className="font-Quattrocento text-grey-500 font-bold text-2xl">
@@ -103,7 +105,7 @@ const Hero = () => {
               </div>
 
               <div className="flex gap-2 items-center">
-                <button className="rounded-md-lg bg-accent p-1 shadow">
+                <button className="rounded-md bg-accent p-1 shadow">
                   <ArrowUpRight01Icon size={20} color="#FAF8F5" />
                 </button>
                 <h4 className="text-grey-500 text-base font-Lora">

@@ -73,12 +73,12 @@ p {
   @apply font-Lora text-base;
 }
 
+span {
+  @apply group-data-[selected=true]:!border-accent;
+}
+
 .grid-checkout {
   display: grid;
   grid-template-columns: 6fr 1fr 5fr;
   gap: 20px;
-}
-
-span {
-  @apply group-data-[selected=true]:!border-accent;
 }

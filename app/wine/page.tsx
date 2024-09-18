@@ -2,20 +2,11 @@
 import {
   WineDetails,
   WineDetailTooltip,
-  WineCard,
   FilterCard,
   WineCarousel,
 } from "@/components";
-import { Image, Tooltip, Button } from "@nextui-org/react";
-import {
-  PercentIcon,
-  Location08Icon,
-  Calendar03Icon,
-  DropletIcon,
-  ArrowRight02Icon,
-  TongueIcon,
-  ArrowLeft01Icon,
-} from "hugeicons-react";
+import { Image } from "@nextui-org/react";
+import { ArrowRight02Icon } from "hugeicons-react";
 
 import { wineFiltersData, allWines2 } from "@/constants";
 
