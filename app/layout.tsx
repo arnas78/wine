@@ -1,6 +1,6 @@
 "use client";
 import "./globals.css";
-import { Navbar } from "@/components";
+import { Footer, Navbar } from "@/components";
 import { usePathname } from "next/navigation"; // Use Next.js' usePathname hook
 
 export default function RootLayout({
@@ -23,6 +23,7 @@ export default function RootLayout({
       <body className={`${getBackgroundColor()} min-h-screen`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

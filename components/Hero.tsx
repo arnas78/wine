@@ -74,7 +74,7 @@ const Hero = () => {
           </div>
         </div>
 
-        <div className="bg-primary rounded-md h-[568px] w-1/2 p-6 flex flex-col justify-between relative overflow-hidden z-50 ">
+        <div className="bg-primary rounded-md h-[568px] w-1/2 p-6 flex flex-col justify-between relative overflow-hidden z-30 ">
           <h1 className="text-7xl font-Quattrocento z-20 text-grey-900">
             Our wine has a <br />
             <span className="text-accent">story</span> to tell

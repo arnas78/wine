@@ -8,6 +8,7 @@ import FilterCard from "./FilterCard";
 import { WineCarousel } from "./WineCarousel";
 import { CheckoutInput } from "./CheckoutInput";
 import CheckoutCard from "./CheckoutCard";
+import Footer from "./Footer";
 
 export {
   Navbar,
@@ -20,4 +21,5 @@ export {
   WineCarousel,
   CheckoutInput,
   CheckoutCard,
+  Footer
 };
